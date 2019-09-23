@@ -12,7 +12,7 @@ References:
 * [Missing value estimation methods for DNA microarrays](http://bioinformatics.oxfordjournals.org/content/17/6/520.full.pdf).  Troyanskaya, et al.
 * [A Singular Value Thresholding Algorithm for Matrix Completion](http://arxiv.org/pdf/0810.3286v1.pdf).  Cai, Candes, Shen.
 
-##Imputation Algorithms Presented
+## Imputation Algorithms Presented
 
 * Mean Imputation
 * k-Nearest Neighbors 
@@ -21,7 +21,7 @@ References:
 * Boosted Trees Imputation
 * Locally weighted least squares
 
-##Highlights
+## Highlights
 
 * meanImpute is a good way to start any missing data problem.  It's the fastest imputation technique and does reasonably well
 * Sometimes, we want to identify missing values and impute them by fitting a line through its neighbors.  This can be done by taking a set of points {y_t, x_t} and regressing y_t on the index t.  Additionally, we can use a locally weighted least squares regression line to taylor the weights of the data points that are observed near the missing ones.  This is done in lmImpute
@@ -30,7 +30,7 @@ References:
 * kNN and SVD impute are classic imputation methods described in Troyanskaya.  The SVD finds a low rank k approximation to the data, which can be suitable for noisy data.  kNN is only good when the number of features is small  
 * SVT is a recently popularized imputation algorithm that does very well with numeric data.  It is however the slowest algorithm presented here, requiring the computation of many SVDs.  SVTApproxImpute can be used as an estimate, simply computing the SVD once, thresholding the singular values at lambda, then multiplying the decomposition again to get the imputation
 
-##Algorithm Design
+## Algorithm Design
 
 Each function in this package includes the imputation algorithm as well as a cross validatiion algorithm.  The CV
 algorithm artificially eliminates 1/3 of the data in a dataset, and runs the imputation function.  Using the completed
